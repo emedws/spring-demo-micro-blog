@@ -1,0 +1,17 @@
+<div>
+    <div ng-show="homeCtrl.loaded && homeCtrl.entries.length == 0" class="card border-danger w-25"
+         style="margin: 5em auto">
+        <h5 class="card-header">Empty</h5>
+        <div class="card-body text-danger">
+            <p class="card-text">There are no entries yet.</p>
+            <a href="#" class="btn btn-primary">New entry</a>
+        </div>
+    </div>
+    <div ng-repeat="entry in homeCtrl.entries" class="my-4 border-bottom">
+        <h2 ng-bind="entry.title"></h2>
+        <p class="text-right">
+            <span ng-bind="entry.date"></span>
+        </p>
+        <p ng-bind="entry.content"></p>
+    </div>
+</div>

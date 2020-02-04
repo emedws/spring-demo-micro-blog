@@ -1,0 +1,26 @@
+<h2>Manage entries</h2>
+<table class="table table-striped">
+    <thead class="thead-light">
+    <tr>
+        <th>Title</th>
+        <th style="width:1%"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-show="entriesCtrl.loaded && entriesCtrl.entries.length == 0">
+        <td colspan="2">
+            No entries yet.
+        </td>
+    </tr>
+    <tr ng-repeat="entry in entriesCtrl.entries">
+        <td>
+            <span ng-bind="entry.date" class="float-right"></span>
+            <p ng-bind="entry.title"></p>
+        </td>
+        <td style="white-space: nowrap;">
+            <button class="btn btn-primary" ng-click="entriesCtrl.edit(entry.id)">Edit</button>
+            <button class="btn btn-danger" ng-click="entriesCtrl.delete(entry)">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
